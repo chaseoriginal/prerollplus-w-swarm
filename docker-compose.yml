@@ -3,20 +3,23 @@ services:
     image: ${image}
     container_name: ${container_name}
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
+    - PUID=1000
+    - PGID=33
+    - TZ=America/Chicago
     ports:
-      - target: 4949
-        published: 4950
-        protocol: tcp
-        mode: host        
+    - target: 4949
+      published: 4950
+      protocol: tcp
+      mode: host
     deploy:
       placement:
         constraints:
-          - node.labels.deployment.target.prerollplus == true
+        - node.labels.deployment.target.prerollplus == true
       restart_policy:
         condition: on-failure
     volumes:
-      - /var/lib/docker/volumes/${container_name}/config/:/config
-      - /media/Multimedia/Pre-Rolls/:/prerolls
+    - prerollplus-w-swarm_prerollplus_config:/config
+    - /media/Multimedia/Pre-Rolls/:/prerolls
+volumes:
+  prerollplus-w-swarm_prerollplus_config:
+    name: prerollplus-w-swarm_prerollplus_config
