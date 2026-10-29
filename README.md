@@ -8,8 +8,8 @@ deployment and polls this repository for changes.
 | Portainer stack id | 9 |
 | Portainer host | ore-dock-110-7 |
 | Endpoint | - (id -) |
-| Swarm | 0vmdpsrq1qdy |
-| Live service | prerollplus-w-swarm_prerollplus |
+| Swarm | True |
+| Live service | svc:prerollplus-w-swarm_prerollplus |
 | Git repo | https://github.com/chaseoriginal/prerollplus-w-swarm |
 | Compose file | `docker-compose.yml` |
 | Auto-update poll | every 900s |
@@ -39,8 +39,8 @@ deployment and polls this repository for changes.
 ## Verifying a deployment
 
 ```bash
-docker service ls --filter name=prerollplus-w-swarm_prerollplus
-docker service inspect prerollplus-w-swarm_prerollplus --format '{{json .Spec.TaskTemplate.ContainerSpec.Mounts}}'
+docker service ls --filter name=svc:prerollplus-w-swarm_prerollplus
+docker service inspect svc:prerollplus-w-swarm_prerollplus --format '{{json .Spec.TaskTemplate.ContainerSpec.Mounts}}'
 ```
 
 A healthy stack shows `1/1` and the same volume names as before.
