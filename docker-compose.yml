@@ -1,7 +1,7 @@
 services:
   prerollplus:
-    image: ${image}
-    container_name: ${container_name}
+    image: chadwpalm/prerollplus:develop
+    container_name: prerollplus-w-swarm_prerollplus
     environment:
     - PUID=1000
     - PGID=33
