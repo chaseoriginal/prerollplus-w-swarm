@@ -1,6 +1,6 @@
 services:
   prerollplus:
-    image: chadwpalm/prerollplus:develop@sha256:4d2cd5abd2eabf6b3b2739ce5eb08db3c6198602e83cf6bcdef200133908a000
+    image: chadwpalm/prerollplus:develop@sha256:4d2cd5abd2eabf6b3b2739ce5eb08db3c6198602e83cf6bcdef200133908a000@sha256:4d2cd5abd2eabf6b3b2739ce5eb08db3c6198602e83cf6bcdef200133908a000
     container_name: prerollplus-w-swarm_prerollplus
     environment:
     - PUID=1000
